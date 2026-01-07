@@ -1,7 +1,7 @@
 export const site = {
   name: "SABBIR",
   fullName: "Muhammad Sabbir",
-  role: "Video Editor & Motion Designer",
+  role: "Video Editor x Motion Designer",
   tagline: "Transform Your Raw Footage Into Visual Magic",
   intro:
     "Professional video editing for brands, creators, and businesses. Long-form & short-form content that captivates.",
@@ -13,9 +13,9 @@ export const site = {
   stats: [
     { label: "Years Experience", value: "2+" },
     { label: "Projects Completed", value: "50+" },
-    { label: "Happy Clients", value: "20+" }
+    { label: "Happy Clients", value: "10+" }
   ],
-  toolsLine: "Premiere Pro, DaVinci Resolve, After Effects",
+  toolsLine: "Premiere Pro, After Effects",
   email: "visualsbysabbir.bd@gmail.com",
   location: "Dhaka, Bangladesh",
   socials: {
