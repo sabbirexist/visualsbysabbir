@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Container from "@/components/Container";
 import Portfolio from "@/components/Portfolio";
 import ServiceCard from "@/components/ServiceCard";
+import { Scissors, Palette, Sparkles, Zap } from "lucide-react";
 import { site } from "@/lib/site";
 
 export default function Page() {
@@ -137,40 +138,44 @@ export default function Page() {
         </section>
 
         {/* SERVICES */}
-        <section id="services" className="py-16">
-          <Container>
-            <div className="text-center">
-              <div className="mx-auto mb-3 inline-flex items-center rounded-full bg-white/70 px-4 py-2 text-sm text-zinc-600 shadow-soft">
-                Services
-              </div>
-              <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-                What I <span className="text-zinc-400">Do</span>
-              </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-zinc-500">
-                Video editing, motion graphics, and post-production with fast delivery and consistent quality.
-              </p>
-            </div>
+<section id="services" className="py-16">
+  <Container>
+    <div className="text-center">
+      <div className="mx-auto mb-3 inline-flex items-center rounded-full bg-white/70 px-4 py-2 text-sm text-zinc-600 shadow-soft">
+        Services
+      </div>
+      <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+        What I <span className="text-zinc-400">Do</span>
+      </h2>
+      <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-zinc-500">
+        Video editing, motion graphics, and post-production with fast delivery and consistent quality.
+      </p>
+    </div>
 
-            <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
-              <ServiceCard
-                title="Video Editing"
-                desc={site.toolsLine}
-              />
-              <ServiceCard
-                title="Color Grading"
-                desc="Professional color correction and cinematic looks."
-              />
-              <ServiceCard
-                title="Motion Graphics"
-                desc="After Effects animations, titles, and visual effects."
-              />
-              <ServiceCard
-                title="Quick Turnaround"
-                desc="Fast delivery without compromising quality."
-              />
-            </div>
-          </Container>
-        </section>
+    <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <ServiceCard
+        title="Video Editing"
+        desc={site.toolsLine}
+        icon={Scissors}
+      />
+      <ServiceCard
+        title="Color Grading"
+        desc="Professional color correction and cinematic looks."
+        icon={Palette}
+      />
+      <ServiceCard
+        title="Motion Graphics"
+        desc="After Effects animations, titles, and visual effects."
+        icon={Sparkles}
+      />
+      <ServiceCard
+        title="Quick Turnaround"
+        desc="Fast delivery without compromising quality."
+        icon={Zap}
+      />
+    </div>
+  </Container>
+</section>
 
         {/* PORTFOLIO */}
         <Container>
