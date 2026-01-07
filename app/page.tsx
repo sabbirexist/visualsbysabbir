@@ -14,38 +14,42 @@ export default function Page() {
   const [status, setStatus] = useState<string | null>(null);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setSending(true);
-    setStatus(null);
+  e.preventDefault();
 
-    const fd = new FormData(e.currentTarget);
-    const payload = {
-      name: String(fd.get("name") || ""),
-      email: String(fd.get("email") || ""),
-      message: String(fd.get("message") || "")
-    };
+  const form = e.currentTarget; // ✅ keep safe reference
 
-    try {
-      const res = await fetch(`${window.location.origin}/api/contact`, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(payload)
-});
+  setSending(true);
+  setStatus(null);
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        setStatus(data?.error || "Failed to send message.");
-      } else {
-        setStatus("Message sent successfully!");
-        e.currentTarget.reset();
-      }
-    } catch (err: any) {
-  setStatus(`Network error: ${err?.message || "unknown"}`);
-    } finally {
-      setSending(false);
+  const fd = new FormData(form);
+  const payload = {
+    name: String(fd.get("name") || ""),
+    email: String(fd.get("email") || ""),
+    message: String(fd.get("message") || "")
+  };
+
+  try {
+    const res = await fetch(`${window.location.origin}/api/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      setStatus(data?.error || "Failed to send message.");
+      return;
     }
-  }
 
+    setStatus("Message sent successfully!");
+    form.reset(); // ✅ works (no null)
+  } catch (err: any) {
+    setStatus(`Network error: ${err?.message || "unknown"}`);
+  } finally {
+    setSending(false);
+  }
+  }
   return (
     <>
       <Header />
