@@ -26,11 +26,11 @@ export default function Page() {
     };
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      });
+      const res = await fetch(`${window.location.origin}/api/contact`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(payload)
+});
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
