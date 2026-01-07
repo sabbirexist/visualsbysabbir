@@ -17,56 +17,56 @@ export const projects: Project[] = [
   {
     id: "p1",
     type: "long",
-    title: "POV: You've learned a new skill",
-    subtitle: "Video Edit",
-    tags: ["Long Form", "Story", "Cinematic"],
+    title: "POV: You've learned a new skill.",
+    subtitle: "Showcase",
+    tags: ["Graphical Storytelling", "Cinematic"],
     video: {
       videoType: "youtube",
-      url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      url: "https://youtu.be/S_ssJVeTMbk"
     }
   },
   {
     id: "p2",
     type: "short",
-    title: "Reel Edit – High Impact Hook",
-    subtitle: "Short Form",
-    tags: ["Reels", "Fast Cuts", "Captions"],
+    title: "0x100x Style Shorts",
+    subtitle: "Showcase",
+    tags: ["0x100x", "Saas"],
     video: {
-      videoType: "vimeo",
-      url: "https://vimeo.com/76979871"
+      videoType: "youtube",
+      url: "https://youtube.com/shorts/KkXUCn4DVl8"
     }
   },
   {
     id: "p3",
     type: "short",
-    title: "Direct MP4 Showcase",
-    subtitle: "Short Form",
-    tags: ["Direct URL"],
+    title: "Clean Minimalistic Shorts - V1",
+    subtitle: "Showcase",
+    tags: ["Clean", "Minimalistic"],
     video: {
-      videoType: "direct",
-      url: "https://www.w3schools.com/html/mov_bbb.mp4"
+      videoType: "youtube",
+      url: "https://youtube.com/shorts/rVCylTgsTao"
     }
   },
   {
     id: "p4",
     type: "long",
-    title: "Google Drive Video (Preview Embed)",
-    subtitle: "Long Form",
-    tags: ["GDrive"],
+    title: "Personal Instagram Outro",
+    subtitle: "Showcase",
+    tags: ["Instagram", "Outro", "Demo"],
     video: {
-      videoType: "gdrive",
-      url: "https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
+      videoType: "youtube,
+      url: "https://youtu.be/eLAOuEJq36Y"
     }
   },
   {
     id: "p5",
     type: "short",
-    title: "Custom Iframe Embed",
-    subtitle: "Embed",
-    tags: ["Iframe"],
+    title: "Clean Minimalistic Shorts - V2",
+    subtitle: "Showcase",
+    tags: ["Clean", "Minimalistic"],
     video: {
-      videoType: "iframe",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      videoType: "Form",
+      url: "https://youtube.com/shorts/TOkR5Zd57c4"
     }
   }
 ];
