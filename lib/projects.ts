@@ -54,7 +54,7 @@ export const projects: Project[] = [
     subtitle: "Showcase",
     tags: ["Instagram", "Outro", "Demo"],
     video: {
-      videoType: "youtube,
+      videoType: "youtube",
       url: "https://youtu.be/eLAOuEJq36Y"
     }
   },
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     subtitle: "Showcase",
     tags: ["Clean", "Minimalistic"],
     video: {
-      videoType: "Form",
+      videoType: "youtube",
       url: "https://youtube.com/shorts/TOkR5Zd57c4"
     }
   }
