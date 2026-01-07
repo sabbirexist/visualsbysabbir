@@ -5,20 +5,27 @@ import { gdriveToPreview } from "@/lib/utils";
 
 export default function VideoEmbed({
   videoType,
-  url
+  url,
+  variant
 }: {
   videoType: "youtube" | "vimeo" | "direct" | "iframe" | "gdrive";
   url: string;
+  variant: "long" | "short";
 }) {
+  // Aspect ratio:
+  // long  → 16:9
+  // short → 9:16
+  const aspectClass =
+    variant === "long" ? "aspect-video" : "aspect-[9/16]";
+
   if (videoType === "iframe") {
     return (
-      <div className="aspect-[9/16] w-full overflow-hidden rounded-2xl bg-black shadow-soft">
+      <div className={`${aspectClass} w-full overflow-hidden rounded-2xl bg-black shadow-soft`}>
         <iframe
           className="h-full w-full"
           src={url}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          title="Embedded video"
         />
       </div>
     );
@@ -27,21 +34,19 @@ export default function VideoEmbed({
   if (videoType === "gdrive") {
     const preview = gdriveToPreview(url);
     return (
-      <div className="aspect-[9/16] w-full overflow-hidden rounded-2xl bg-black shadow-soft">
+      <div className={`${aspectClass} w-full overflow-hidden rounded-2xl bg-black shadow-soft`}>
         <iframe
           className="h-full w-full"
           src={preview}
           allow="autoplay"
           allowFullScreen
-          title="Google Drive video"
         />
       </div>
     );
   }
 
-  // react-player supports YouTube, Vimeo, mp4 URLs, etc.
   return (
-    <div className="aspect-[9/16] w-full overflow-hidden rounded-2xl bg-black shadow-soft">
+    <div className={`${aspectClass} w-full overflow-hidden rounded-2xl bg-black shadow-soft`}>
       <ReactPlayer
         url={url}
         width="100%"
