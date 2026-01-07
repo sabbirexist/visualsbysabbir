@@ -39,8 +39,8 @@ export default function Page() {
         setStatus("Message sent successfully!");
         e.currentTarget.reset();
       }
-    } catch {
-      setStatus("Network error. Please try again.");
+    } catch (err: any) {
+  setStatus(`Network error: ${err?.message || "unknown"}`);
     } finally {
       setSending(false);
     }
