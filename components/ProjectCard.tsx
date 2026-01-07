@@ -6,10 +6,11 @@ export default function ProjectCard({ project }: { project: Project }) {
     <div className="rounded-3xl bg-white shadow-soft">
       <div className="p-4">
         <VideoEmbed
-  videoType={project.video.videoType}
-  url={project.video.url}
-  variant={project.type}
-/>
+          videoType={project.video.videoType}
+          url={project.video.url}
+          variant={project.type}
+        />
+      </div>
 
       <div className="px-5 pb-5">
         <div className="flex items-center justify-between text-xs text-zinc-500">
@@ -26,7 +27,10 @@ export default function ProjectCard({ project }: { project: Project }) {
         {project.tags?.length ? (
           <div className="mt-2 flex flex-wrap gap-2">
             {project.tags.map((t) => (
-              <span key={t} className="rounded-full bg-zinc-100 px-3 py-1 text-xs text-zinc-600">
+              <span
+                key={t}
+                className="rounded-full bg-zinc-100 px-3 py-1 text-xs text-zinc-600"
+              >
                 {t}
               </span>
             ))}
