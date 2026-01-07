@@ -5,8 +5,11 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="rounded-3xl bg-white shadow-soft">
       <div className="p-4">
-        <VideoEmbed videoType={project.video.videoType} url={project.video.url} />
-      </div>
+        <VideoEmbed
+  videoType={project.video.videoType}
+  url={project.video.url}
+  variant={project.type}
+/>
 
       <div className="px-5 pb-5">
         <div className="flex items-center justify-between text-xs text-zinc-500">
